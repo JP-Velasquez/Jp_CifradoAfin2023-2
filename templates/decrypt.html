@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Agrega una referencia al archivo de estilos style.css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jp - Descifrado Afin</title>
+</head>
+
+<body>
+    <!-- Menú de navegación -->
+    <header>
+        <section class="wrapper">
+            <nav>
+                <ul>
+                    <li><a href="/">Cifrar</a></li>
+                    <li><a href="/decrypt">Descifrar</a></li>
+                </ul>
+            </nav>
+        </section>
+    </header>
+
+    <!-- Título principal y descripción de la fórmula de descifrado -->
+    </br></br></br></br>
+    <h1 class="left-align">Descifrado Afin</h1></br>
+    <h2 class="left-align">Fórmula para descifrar:</h2>
+    <h3 class="left-align" id="gris">m = (c – b) * inv(a, n) mod n</h3> <br>
+    <h3 class="left-align">[1] W = a * E + b mod 27</h3>
+    <h4 class="left-align">a = (W - b) * inv(E, 27) mod 27</h3>
+        <h3 class="left-align">[2] K = a * A + b mod 27</h3>
+        <h4 class="left-align">b = K - a * A mod 27</h3>
+
+            <!-- Formulario para ingresar texto cifrado y parámetros de descifrado -->
+            <form id="formDecipher" method="POST" action="/decrypt">
+                </br><label class="input-label" for="ciphertext">Ingrese texto cifrado:</label>
+                <textarea id="ciphertext" name="ciphertext" rows="5" cols="65" placeholder="Texto a descifrar"
+                    required></textarea> </br></br>
+
+                <label for="autoDecipher" style="float: left; padding-right: 20px;">
+                    <input type="radio" id="autoDecipher" name="decipherOption" value="auto">
+                    Descifrado Automático
+                </label>
+
+                <label for="manualDecipher" style="float: left;">
+                    <input type="radio" id="manualDecipher" name="decipherOption" value="manual">
+                    Descifrado Manual
+                </label> </br>
+
+                <div id="manualFields" style="display:none; clear: both;">
+                    <label for="a_decipher" style="float: left; padding-right: 20px;">A (Key *):</label>
+                    <input type="number" id="a_decipher" name="a_decipher" style="float: left;" disabled required>
+                    <label for="b_decipher" style="float: left; padding-left: 20px;">B (Key +):</label>
+                    <input type="number" id="b_decipher" name="b_decipher" style="float: left;" disabled required>
+                </div> </br>
+
+                <!-- Mueve el botón "Submit" aquí, siempre debajo de los campos -->
+                <div style="clear: both;">
+                    <button type="submit" id="submitButton">Descifrar</button>
+                </div>
+            </form>
+
+            </br>
+            <!-- Espacio para mostrar el resultado del descifrado y el análisis de frecuencia -->
+            <div>
+                <h5>Resultado de texto descifrado:</h5>
+                <div id="result" name="result"></div>
+            </div>
+
+            <div class="chart-container">
+                <div id="frequencyResultTxtIngresado" class="chart"></div>
+                <div id="frequencyResultTxtResult" class="chart"></div>
+            </div> <br>
+
+            <button type="button" id="frequencyButton" style="display: none;" disabled>Análisis de Frecuencia del Texto
+                Descifrado</button> </br>
+
+            <!-- Enlace para volver a la página de cifrado -->
+            <div id="enlaces" style="display: none;"><br><br>
+                <a href="/decrypt">Volver a descifrar</a> <br><br>
+                <a href="/">Ir a cifrar</a><br>
+            </div><br><br>
+
+            <script src="{{ url_for('static', filename='decrypt.js') }}"></script>
+
+</body>
+
+</html>

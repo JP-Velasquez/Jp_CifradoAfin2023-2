@@ -1,0 +1,233 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 1vh;
+    margin: 0;
+    margin-left: 20px;
+    /* Añade el margen izquierdo que desees */
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    /* Para centrar contenido dentro del container */
+}
+
+.left-align {
+    text-align: left;
+}
+
+.center-align {
+    text-align: center;
+}
+
+.right-align {
+    text-align: right;
+}
+
+/* Encabezados */
+h1 {
+    color: #0805a2;
+}
+
+h2 {
+    color: #000000;
+}
+
+h3 {
+    color: #000000;
+}
+
+h4 {
+    color: #777777;
+}
+
+/* Formulario */
+form {
+    margin-bottom: 0px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333333;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 60%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    display: block;
+}
+
+input[type="number"] {
+    width: 15%;
+}
+
+button[type="submit"] {
+    width: 30%;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #043e7d;
+}
+
+button[type="button"] {
+    width: 26%;
+    background-color: white;
+    color: black;
+    border: 2px solid #004ea1;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+button[type="button"]:hover {
+    background-color: #043e7d;
+    color: white
+}
+
+.button {
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button2 {
+    background-color: white;
+    color: black;
+    border: 2px solid #008CBA;
+}
+
+.button2:hover {
+    background-color: #008CBA;
+    color: white;
+}
+
+/* Resultado */
+#result {
+    padding: 10px;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    width: 45%;
+}
+
+/* Estilo para el menú */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+.wrapper {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+}
+
+nav {
+    float: left;
+    /* Desplazamos el nav hacia la izquierda */
+}
+
+nav ul {
+    list-style: none;
+    overflow: hidden;
+    /* Limpiamos errores de float */
+}
+
+nav ul li {
+    float: left;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+nav ul li a {
+    display: block;
+    /* Convertimos los elementos a en elementos bloque para manipular el padding */
+    padding: 20px;
+    color: #fff;
+    text-decoration: none;
+}
+
+nav ul li:hover {
+    background: #3ead47;
+}
+
+.contenido {
+    padding-top: 80px;
+}
+
+/* Estilo para el contenedor de las gráficas */
+.chart-container {
+    display: flex;
+    /* Usar flexbox para disposición horizontal */
+}
+
+/* Estilo para cada gráfica individual */
+.chart {
+    flex: 1;
+    /* Distribuir el espacio disponible de manera uniforme */
+    margin-right: 10px;
+    /* Espacio entre las gráficas */
+}
+
+
+/* Aplica un ancho específico al textarea con el id "text" */
+#text, #ciphertext {
+    width: 60%;
+}
+
+/* Aplica un ancho específico al div con el id "result" */
+#result {
+    width: 55%;
+}
+
+#gris{
+    color: #777777;
+}

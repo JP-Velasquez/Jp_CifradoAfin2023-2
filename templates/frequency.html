@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Agrega una referencia al archivo de estilos style.css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jp - Análisis de Frecuencia</title>
+</head>
+
+<body>
+    <!-- Título principal de la página de análisis de frecuencia -->
+    </br></br>
+    <h1 class="left-align">Análisis de Frecuencia</h1>
+
+    <!-- Muestra la imagen del diagrama de frecuencia -->
+    <img src="data:image/png;base64,{{ img_data }}" alt="Frequency Diagram">
+
+</body>
+
+</html>

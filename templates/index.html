@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Agrega una referencia al archivo de estilos style.css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jp - Cifrado Afin</title>
+</head>
+
+<body>
+    <!-- Menú de navegación -->
+    <header>
+        <section class="wrapper">
+            <nav>
+                <ul>
+                    <li><a href="/">Cifrar</a></li>
+                    <li><a href="/decrypt">Descifrar</a></li>
+                </ul>
+            </nav>
+        </section>
+    </header>
+
+    <!-- Título principal y descripción de la fórmula de cifrado -->
+    </br></br></br></br>
+    <h1 class="left-align">Cifrado Afin</h1></br>
+    <h2 class="left-align">Fórmula para cifrar:</h2>
+    <h3 class="left-align">"C = (a*m + b) mod n"</h3>
+
+    <!-- Formulario para ingresar texto y parámetros de cifrado -->
+    <form id="formCifrado" method="POST" action="/encrypt">
+        </br><label class="input-label" for="text">Ingrese texto:</label>
+        <textarea id="text" name="text" rows="5" cols="65" placeholder="Texto a cifrar" required></textarea> </br></br>
+        <label for="a" style="float: left; padding-right: 20px;">a (Key *):</label>
+        <input type="number" id="a" name="a" style="float: left;" required>
+        <label for="b" style="float: left; padding-left: 20px;">b (Key +):</label>
+        <input type="number" id="b" name="b" style="float: left;" required>
+        <!-- Mueve el botón "Submit" aquí, siempre debajo de los campos -->
+        <div style="clear: both;"></br>
+            <button type="submit" id="encryptButton">Encriptar</button>
+        </div>
+    </form>
+
+    </br>
+    <!-- Espacio para mostrar el resultado del cifrado y el análisis de frecuencia -->
+    <div>
+        <h5>Resultado de texto cifrado:</h5>
+        <div id="result" name="result"></div>
+    </div>
+
+    <div class="chart-container">
+        <div id="frequencyResultTxtIngresado" class="chart"></div>
+        <div id="frequencyResultTxtResult" class="chart"></div>
+    </div> <br>
+
+    <button type="button" id="frequencyButton" style="display: none;" disabled>Análisis de Frecuencia del Texto
+        Cifrado</button> </br>
+
+    <!-- Enlace para volver a la página de cifrado -->
+    <div id="enlaces" style="display: none;"><br><br>
+        <a href="/">Volver a cifrar</a><br><br>
+        <a href="/decrypt"> Ir a descifrar</a> <br>
+    </div><br><br>
+
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+</body>
+
+</html>
